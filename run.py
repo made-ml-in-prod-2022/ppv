@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+import logging
 
 from configs.config_train import ConfigTrain
 from configs.config_predict import ConfigPredict
@@ -8,20 +9,30 @@ from src.predict import predict
 
 
 def train_pipeline():
+    logging.info('Start of train pipeline')
+
     config = ConfigTrain()
     config.load('configs/config_train.yml')
-
+    
     # preparing data for training
     data_prepare(config.input_data_path, config.training.split)
 
     # train model
     train(config.training.model)
 
+    logging.info('End of train pipeline')
+
+
 def predict_pipeline(data_path, predicts_path):
+    
+    logging.info('Start of predict pipeline')
+
     config = ConfigPredict()
     config.load('configs/config_predict.yml')
 
     predict(config.model.store_path, data_path, predicts_path)
+
+    logging.info('End of predict pipeline')
 
 
 def get_cli_args():
@@ -45,6 +56,12 @@ def get_cli_args():
 
 def main():
     args = get_cli_args()
+
+    logging.basicConfig(filename='myapp.log', 
+                        format='%(asctime)s %(levelname)s:%(message)s',
+                        datefmt='%m/%d/%Y %H:%M:%S',
+                        level=logging.INFO)
+
 
     if args.command == 'train':
         train_pipeline()

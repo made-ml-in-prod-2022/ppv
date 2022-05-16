@@ -1,8 +1,7 @@
 """Module for training model"""
 
 import joblib
-from argparse import ArgumentParser
-
+import logging
 
 import pandas as pd
 
@@ -35,15 +34,7 @@ def train(model_config):
 
     accuracy = accuracy_score(y_test, model.predict(X_test))
 
-    print(f'Model {model_config.name} was trained. Accuracy = {accuracy:5.3f}')
+    logging.info(f'Model {model_config.name} was trained. Accuracy = {accuracy:5.3f}')
     
     joblib.dump(model, model_config.store_path)
-    print(f'Model saved to {model_config.store_path}')
-
-
-if __name__ == '__main__':
-    parser = set_parser()
-
-    args = parser.parse_args()
-
-    main(args.model_path)
+    logging.info(f'Model saved to {model_config.store_path}')
