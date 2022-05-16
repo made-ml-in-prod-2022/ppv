@@ -3,9 +3,9 @@ import logging
 
 from configs.config_train import ConfigTrain
 from configs.config_predict import ConfigPredict
-from src.data_prepare import data_prepare
-from src.train import train
-from src.predict import predict
+from ml_project.data_prepare import data_prepare
+from ml_project.train import train
+from ml_project.predict import predict
 
 
 def train_pipeline():
