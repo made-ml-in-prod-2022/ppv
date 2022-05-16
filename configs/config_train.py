@@ -26,7 +26,6 @@ class TrainingConfig(DataClassJsonMixin):
 @dataclass
 class ConfigTrain(YamlDataClassConfig):
     input_data_path: str = None
-    output_model_path: str = None
     training: TrainingConfig = None
 
 
