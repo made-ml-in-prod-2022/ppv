@@ -1,10 +1,14 @@
 Installation:
 
 ~~~
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ~~~
 -------------------------------
+All settings are set in configs/(config_train.yml and config_test.yml) files
 
+Two modes of operation: training and predicting.
 
 Run training pipeline:
 ~~~
