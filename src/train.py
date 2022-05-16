@@ -13,8 +13,8 @@ from sklearn.metrics import accuracy_score
 
 def train(model_config):
     
-    train_df = pd.read_csv('data/train_heart_cleveland_upload.csv')
-    test_df = pd.read_csv('data/test_heart_cleveland_upload.csv')
+    train_df = pd.read_csv('data/training/train.csv')
+    test_df = pd.read_csv('data/training/test.csv')
 
     features = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach',
                 'exang', 'oldpeak', 'slope', 'ca', 'thal']
