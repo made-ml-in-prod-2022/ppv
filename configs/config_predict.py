@@ -11,6 +11,4 @@ class ModelConfig(DataClassJsonMixin):
 
 @dataclass
 class ConfigPredict(YamlDataClassConfig):
-    data_path: str = None
-    predict_path: str = None
     model: ModelConfig = None

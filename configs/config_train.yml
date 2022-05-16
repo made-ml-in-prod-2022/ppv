@@ -1,9 +1,9 @@
-input_data_path: "data/train_heart_cleveland_upload.csv"
+input_data_path: "data/heart_cleveland_upload.csv"
 output_model_path: "models/model.pkl"
 training:
     split:
         train_size: 0.8
         random_state: 42
     model:
-        name: "RandomForest"
+        name: "LogisticRegression"
         store_path: "model/model.pkl"

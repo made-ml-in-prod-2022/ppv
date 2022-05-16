@@ -1,4 +1,2 @@
-predict_path: "predict.csv"
-data_path: "data/heart_cleveland_upload.csv"
 model:
     store_path: "model/model.pkl"
