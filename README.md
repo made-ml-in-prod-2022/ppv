@@ -30,7 +30,7 @@ Project Organization
     │   ├── heart_cleveland_upload.csv.dvc   <- The original raw data
 	│   ├── training                         <- Additional directory for saving data during training models 
     │
-    ├── src
+    ├── ml_project
     │   ├── predict.py                       <- Script for generatining predictions
     │   ├── prepare_data.py                  <- Script to generate train/test corpus from raw data
     │   ├── train.py                         <- Script to train model
