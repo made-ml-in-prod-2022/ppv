@@ -5,5 +5,6 @@ training:
         train_size: 0.8
         random_state: 42
     model:
+        # allowed names are "LogisticRegression" and "RandomForest"
         name: "LogisticRegression"
         store_path: "model/model.pkl"
